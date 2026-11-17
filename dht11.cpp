@@ -17,7 +17,7 @@ float Temperatura() {
 float Umidade() {
   return dht.readHumidity();
 }
-float sensasao(float temp, float umi, bool isFahrenheit = false) {
+float Sensasao(float temp, float umi, bool isFahrenheit) {
   return dht.computeHeatIndex(temp, umi, isFahrenheit);
 }
 
@@ -31,4 +31,11 @@ void secadura(float umi, int pino, int duracao) {
   if (umi >= 70) {
     zuada(pino, duracao);
   }
+}
+
+void erro(float temp, float umi) {
+  if (isnan(umi) || isnan(temp)) {
+  Serial.println("Erro ao ler do sensor DHT11!");
+  
+}
 }

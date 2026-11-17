@@ -7,7 +7,9 @@
 void inicializar();
 float Temperatura();
 float Umidade();
+
 float Sensasao(float temp, float umi, bool isFahrenheit = false);
 void calor(float temp, int pino, int duracao);
 void secadura(float umi, int pino, int duracao);
+void erro(float temp, float umi);
 #endif
